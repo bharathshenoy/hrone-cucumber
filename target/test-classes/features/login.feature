@@ -5,7 +5,8 @@ Feature: Login page
 
   @smoke
   Scenario: Login to HrOne
-    When user clicks on username field and enters username
+    When user is in hrOne login page
+    And user clicks on username field and enters username
     And user clicks on Next button
     And user clicks on password field and enters password
     And user clicks on Login button

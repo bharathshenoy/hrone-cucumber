@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-HrOne" class="navigator-link">
-              <span class="suite-name border-passed">HrOne</span>
+              <span class="suite-name border-failed">HrOne</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-HrOne" class="hide-methods passed suite-HrOne"> (hide)</a> <!-- hide-methods passed suite-HrOne -->
-                      <a href="#" panel-name="suite-HrOne" class="show-methods passed suite-HrOne"> (show)</a> <!-- show-methods passed suite-HrOne -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-HrOne" class="hide-methods failed suite-HrOne"> (hide)</a> <!-- hide-methods failed suite-HrOne -->
+                      <a href="#" panel-name="suite-HrOne" class="show-methods failed suite-HrOne"> (show)</a> <!-- show-methods failed suite-HrOne -->
                     </span>
-                    <div class="method-list-content passed suite-HrOne">
+                    <div class="method-list-content failed suite-HrOne">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-HrOne" title="testRunner.hrOneTest" class="method navigator-link" hash-for-method="runScenario(&quot;Login to HrOne&quot;, &quot;Login page&quot;)">runScenario("Login to HrOne", "Login page")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-HrOne -->
+                    </div> <!-- method-list-content failed suite-HrOne -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,9 +118,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-HrOne" class="panel HrOne">
-          <div class="suite-HrOne-class-passed">
+          <div class="suite-HrOne-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testRunner.hrOneTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -130,12 +130,25 @@
                   </a> <!-- runScenario("Login to HrOne", "Login page") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Login to HrOne","Login page")</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of elements found by By.id: hrone-username to be less than &quot;1&quot;. Current number: &quot;1&quot; (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6.8&apos;, java.version: &apos;20.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/z0/4tbh4gr536v...}, goog:chromeOptions: {debuggerAddress: localhost:50732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50732/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b1d82b4ca633fbce3f9cf743a384cf0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.hrOne.pages.LoginPage.enterUsername(LoginPage.java:44)
+	at steps.LoginSteps.userEntersUsername(LoginSteps.java:42)
+	at ✽.user clicks on username field and enters username(file:///Users/bharathshenoy/hrone-cucumber/src/test/resources/features/login.feature:9)
+
+</div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-HrOne-class-passed -->
+          </div> <!-- suite-HrOne-class-failed -->
         </div> <!-- panel HrOne -->
         <div panel-name="test-xml-HrOne" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -200,12 +213,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'testRunner.hrOneTest')
-data.setCell(0, 3, 8171);
+data.setCell(0, 3, 70522);
 window.suiteTableData['HrOne']= { tableData: data, tableDiv: 'times-div-HrOne'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-HrOne">
               </div> <!-- times-div-HrOne -->
             </div> <!-- times-div -->
@@ -233,16 +246,18 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">testRunner.hrOneTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@54ffa561)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@75e80a97)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">runScenario("Login to HrOne", "Login page")</span>
-                <span class="method-start">427 ms</span>
+                <span class="method-start">424 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">8602 ms</span>
+                <span class="method-start">70952 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

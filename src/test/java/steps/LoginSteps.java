@@ -27,8 +27,9 @@ public class LoginSteps {
     }
 
     @Given("user enters the HrOne website url")
-    public void userEntersHrOneUrl() {
+    public void userEntersHrOneUrl() throws InterruptedException {
         driver.get(applicationFileReader.getLoginLink());
+        Thread.sleep(5000);
     }
 
     @Given("user is in hrOne login page")
