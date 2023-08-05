@@ -3,6 +3,7 @@ Feature: Login page
   Background: Launching HrOne Website
     Given user enters the HrOne website url
 
+  @smoke
   Scenario: Login to HrOne
     When user clicks on username field and enters username
     And user clicks on Next button

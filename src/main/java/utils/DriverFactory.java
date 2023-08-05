@@ -2,6 +2,7 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -46,7 +47,10 @@ public class DriverFactory {
         if(driver == null){
 
             if (fileReader.getBrowser().equals("chrome")){
-                driver = new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless");
+                driver = new ChromeDriver(chromeOptions);
+
             }
             else if(fileReader.getBrowser().equals("firefox")){
                 driver = new FirefoxDriver();

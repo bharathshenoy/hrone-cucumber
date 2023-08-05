@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite name="Cucumber" time="8.259" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login page" name="Login to HrOne" time="8.07">
+<system-out><![CDATA[
+Given user enters the HrOne website url.....................................passed
+When user clicks on username field and enters username......................passed
+And user clicks on Next button..............................................passed
+And user clicks on password field and enters password.......................passed
+And user clicks on Login button.............................................passed
+Then user will be taken to HrOne one home page..............................passed
+]]></system-out>
+</testcase>
+</testsuite>

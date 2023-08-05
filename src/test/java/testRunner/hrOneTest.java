@@ -9,7 +9,8 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"pretty",
                 "html:target/MyReport/cucumber",
                 "json:target/MyReport/report.json",
-                "junit:target/MyReport/report.xml"}
+                "junit:target/MyReport/report.xml"},
+        tags = "@smoke"
 )
 
 public class hrOneTest extends AbstractTestNGCucumberTests {

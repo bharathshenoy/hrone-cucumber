@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-05T22:56:51 IST" name="HrOne" finished-at="2023-03-05T22:58:31 IST" duration-ms="99404">
+  <suite started-at="2023-08-05T13:39:59 IST" name="HrOne" finished-at="2023-08-05T13:40:08 IST" duration-ms="8699">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.hrOneTest@70f59913]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.hrOneTest@68df9280]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-03-05T22:56:51 IST" name="/Users/bharathshenoy/HRONE-0" finished-at="2023-03-05T22:58:31 IST" duration-ms="99404">
+    <test started-at="2023-08-05T13:39:59 IST" name="/Users/bharathshenoy/HRONE" finished-at="2023-08-05T13:40:08 IST" duration-ms="8699">
       <class name="testRunner.hrOneTest">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.hrOneTest@70f59913]" started-at="2023-03-05T22:56:51 IST" name="setUpClass" finished-at="2023-03-05T22:56:52 IST" duration-ms="411" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.hrOneTest@68df9280]" started-at="2023-08-05T13:39:59 IST" name="setUpClass" finished-at="2023-08-05T13:39:59 IST" duration-ms="416" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@56113384]]>
+                <![CDATA[org.testng.TestRunner@54ffa561]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.hrOneTest@70f59913]" started-at="2023-03-05T22:56:52 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-05T22:58:31 IST" duration-ms="98905" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.hrOneTest@68df9280]" started-at="2023-08-05T13:39:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-08-05T13:40:07 IST" duration-ms="8171" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Mark the attendance daily"]]>
+                <![CDATA["Login to HrOne"]]>
               </value>
             </param>
             <param index="1">
@@ -37,11 +37,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.hrOneTest@70f59913]" started-at="2023-03-05T22:58:31 IST" name="tearDownClass" finished-at="2023-03-05T22:58:31 IST" duration-ms="63" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.hrOneTest@68df9280]" started-at="2023-08-05T13:40:07 IST" name="tearDownClass" finished-at="2023-08-05T13:40:08 IST" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- testRunner.hrOneTest -->
-    </test> <!-- /Users/bharathshenoy/HRONE-0 -->
+    </test> <!-- /Users/bharathshenoy/HRONE -->
   </suite> <!-- HrOne -->
 </testng-results>
