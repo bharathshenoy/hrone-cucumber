@@ -20,6 +20,7 @@ public class MarkingAttendanceSteps {
     public MarkingAttendanceSteps(DriverFactory driverFactory){
         this.driverFactory = driverFactory;
         this.driver = driverFactory.getDriver();
+        PageFactory.initElements(driverFactory.getDriver(),this);
         markingAttendance = new MarkingAttendance(driverFactory);
         loginPage = new LoginPage(driverFactory);
     }
