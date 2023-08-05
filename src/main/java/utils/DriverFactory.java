@@ -42,26 +42,20 @@ public class DriverFactory {
 //        driver.manage().window().maximize();
 //    }
 
-    public void setDriver(){
+    public void setDriver() {
+        if (driver == null) {
 
-        if(driver == null){
-
-            if (fileReader.getBrowser().equals("chrome")){
+            if (fileReader.getBrowser().equals("chrome")) {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
 
-            }
-            else if(fileReader.getBrowser().equals("firefox")){
+            } else if (fileReader.getBrowser().equals("firefox")) {
                 driver = new FirefoxDriver();
-            }
-            else if(fileReader.getBrowser().equals("safari")){
+            } else if (fileReader.getBrowser().equals("safari")) {
                 driver = new SafariDriver();
             }
         }
         driver.manage().window().maximize();
-
-
-
     }
 }

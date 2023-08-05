@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ApplicationFileReader;
 import utils.DriverFactory;
 
-import java.io.IOException;
 import java.time.Duration;
 
 public class LoginPage {
@@ -39,7 +38,7 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//div[@class='navbar-brand']")
     WebElement topNavBar;
 
-    public void enterUsername()  {
+    public void enterUsername() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(userName));
         userName.clear();
@@ -79,7 +78,7 @@ public class LoginPage {
                 (By.xpath("//img[@src='/assets/images/Loading_Animation_White-BG.gif']"), 1));
     }
 
-    public void topNavBar(){
+    public void topNavBar() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(topNavBar));
     }

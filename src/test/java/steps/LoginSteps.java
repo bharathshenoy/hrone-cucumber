@@ -8,8 +8,6 @@ import org.testng.Assert;
 import utils.ApplicationFileReader;
 import utils.DriverFactory;
 
-import java.io.IOException;
-
 public class LoginSteps {
     DriverFactory driverFactory;
     LoginPage loginPage;

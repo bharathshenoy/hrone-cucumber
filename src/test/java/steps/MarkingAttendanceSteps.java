@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.DriverFactory;
 
-import java.io.IOException;
-
 public class MarkingAttendanceSteps {
 
     DriverFactory driverFactory;
@@ -17,16 +15,16 @@ public class MarkingAttendanceSteps {
     LoginPage loginPage;
     WebDriver driver;
 
-    public MarkingAttendanceSteps(DriverFactory driverFactory){
+    public MarkingAttendanceSteps(DriverFactory driverFactory) {
         this.driverFactory = driverFactory;
         this.driver = driverFactory.getDriver();
-        PageFactory.initElements(driverFactory.getDriver(),this);
+        PageFactory.initElements(driverFactory.getDriver(), this);
         markingAttendance = new MarkingAttendance(driverFactory);
         loginPage = new LoginPage(driverFactory);
     }
 
     @Given("user performs valid login operation")
-    public void userLogin() throws IOException {
+    public void userLogin() {
         loginPage.enterUsername();
         loginPage.clickNextButton();
         loginPage.enterPassword();
@@ -43,8 +41,9 @@ public class MarkingAttendanceSteps {
     public void userClosesAllPopUps() {
         markingAttendance.closePopUps();
     }
+
     @And("user will mark the attendance")
     public void userMarksAttendance() throws InterruptedException {
-//        markingAttendance.markAttendance();
+        markingAttendance.markAttendance();
     }
 }

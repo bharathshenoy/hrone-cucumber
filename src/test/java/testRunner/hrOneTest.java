@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
                 "html:target/MyReport/cucumber",
                 "json:target/MyReport/report.json",
                 "junit:target/MyReport/report.xml",
-        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         tags = "@smoke"
 )
 

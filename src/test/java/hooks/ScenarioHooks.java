@@ -14,9 +14,10 @@ public class ScenarioHooks {
     DriverFactory driverFactory;
 
     public ScenarioHooks(DriverFactory driverFactory) {
-        this.driver=driverFactory.getDriver();
+        this.driver = driverFactory.getDriver();
         this.driverFactory = driverFactory;
     }
+
     @AfterStep
     public void AfterStep(Scenario scenario) {
         if (scenario.isFailed()) {
