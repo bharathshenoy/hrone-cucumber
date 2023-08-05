@@ -8,16 +8,20 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.ApplicationFileReader;
 import utils.DriverFactory;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class LoginPage {
     WebDriver driver;
+    ApplicationFileReader applicationFileReader;
 
     public LoginPage(DriverFactory driverFactory) {
         this.driver = driverFactory.getDriver();
         PageFactory.initElements(driverFactory.getDriver(), this);
+        applicationFileReader = new ApplicationFileReader();
     }
 
     @FindBy(how = How.ID, using = "hrone-username")
@@ -32,18 +36,21 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//span[normalize-space()='LOG IN']")
     WebElement login;
 
-    public void enterUsername() {
+    @FindBy(how = How.XPATH, using = "//div[@class='navbar-brand']")
+    WebElement topNavBar;
+
+    public void enterUsername()  {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(userName));
         userName.clear();
-        userName.sendKeys("bharath.s@robosoftin.com");
+        userName.sendKeys(applicationFileReader.getUsername());
     }
 
     public void enterPassword() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         password.clear();
         wait.until(ExpectedConditions.visibilityOf(password));
-        password.sendKeys("IamAwesome7H*");
+        password.sendKeys(applicationFileReader.getPassword());
     }
 
     public void clickNextButton() {
@@ -66,5 +73,14 @@ public class LoginPage {
                 (By.xpath("(//span[normalize-space()='Processing'])[1]"), 1));
     }
 
+    public void waitTillLoading() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan
+                (By.xpath("//img[@src='/assets/images/Loading_Animation_White-BG.gif']"), 1));
+    }
 
+    public void topNavBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.visibilityOf(topNavBar));
+    }
 }

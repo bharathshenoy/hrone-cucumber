@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.DriverFactory;
 
+import java.io.IOException;
+
 public class MarkingAttendanceSteps {
 
     DriverFactory driverFactory;
@@ -23,11 +25,12 @@ public class MarkingAttendanceSteps {
     }
 
     @Given("user performs valid login operation")
-    public void userLogin(){
+    public void userLogin() throws IOException {
         loginPage.enterUsername();
         loginPage.clickNextButton();
         loginPage.enterPassword();
         loginPage.clickLogin();
+        loginPage.waitTillLoading();
     }
 
     @Given("user in in HrOne home page")
@@ -40,7 +43,7 @@ public class MarkingAttendanceSteps {
         markingAttendance.closePopUps();
     }
     @And("user will mark the attendance")
-    public void userMarksAttendance() {
+    public void userMarksAttendance() throws InterruptedException {
         markingAttendance.markAttendance();
     }
 }

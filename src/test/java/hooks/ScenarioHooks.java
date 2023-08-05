@@ -14,7 +14,7 @@ public class ScenarioHooks {
     }
 
     @Before
-    public void setUp() throws Throwable {
+    public void setUp() {
         driverFactory.setDriver();
     }
 

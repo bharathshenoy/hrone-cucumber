@@ -22,25 +22,41 @@ public class MarkingAttendance {
         PageFactory.initElements(driverFactory.getDriver(), this);
     }
 
-    @FindBy(how = How.XPATH, using = "//button[normalize-space()='MARK ATTENDANCE']")
+    @FindBy(how = How.XPATH, using = "//button[normalize-space()='Mark attendance']")
     WebElement markAttendanceMainButton;
 
     @FindBy(how = How.XPATH, using = "//span[normalize-space()='Mark attendance']")
     WebElement markAttendanceButton;
 
-    public void markAttendance() {
+    @FindBy(how = How.XPATH, using = "//textarea[@id='mat-input-16']")
+    WebElement writeRemarks;
+
+
+    public void markAttendance() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(markAttendanceMainButton));
         Assert.assertTrue(markAttendanceMainButton.isDisplayed());
         markAttendanceMainButton.click();
+        Thread.sleep(5000);
+        writeRemarks.sendKeys("Marking Attendance");
         Assert.assertTrue(markAttendanceButton.isDisplayed());
         markAttendanceButton.click();
         waitTillProcessing();
     }
 
     public void closePopUps() {
-        driver.findElement(By.xpath("//a[normalize-space()='May be Later']")).click();
-        System.out.println("May be Later button clicked");
+        try {
+            driver.findElement(By.xpath("//a[normalize-space()='May be Later']")).click();
+            System.out.println("May be Later button clicked");
+        } catch (Exception ignored) {
+        }
+
+        try {
+            driver.findElement(By.xpath(" //div[@class='dialogContentInner ng-tns-c75-172']//em[@class='material-icons'][normalize-space()='clear']")).click();
+            System.out.println("Clear button clicked");
+        } catch (Exception ignored) {
+        }
+
         try {
             driver.findElement(By.xpath("//div[@role='dialog']//div//div//div//i[contains(text(),'clear')]")).click();
             System.out.println("Clear button clicked");
